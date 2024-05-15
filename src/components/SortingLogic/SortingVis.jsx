@@ -91,7 +91,7 @@ export default function SortVisualizer(props) {
     console.log(executionTime);
     if(true){
       setTimeout(() => {
-          ShowPopup('merge sort',executionTime);
+          ShowPopup('Merge Sort',executionTime);
         }, animations.length * DELAY + ARR_LEN * DELAY);
       }
     return executionTime;
@@ -106,7 +106,7 @@ export default function SortVisualizer(props) {
     console.log(executionTime);
     if(true){
     setTimeout(() => {
-        ShowPopup('bubble sort',executionTime);
+        ShowPopup('Bubble Sort',executionTime);
       }, animations.length * DELAY + ARR_LEN * DELAY);
     }
     return executionTime;
@@ -121,7 +121,7 @@ export default function SortVisualizer(props) {
     console.log(executionTime);
     if(true){
       setTimeout(() => {
-          ShowPopup('quick sort',executionTime);
+          ShowPopup('Quick Sort',executionTime);
         }, animations.length * DELAY + ARR_LEN * DELAY);
       }
       return executionTime;
@@ -137,7 +137,7 @@ export default function SortVisualizer(props) {
     console.log(executionTime);
     if(true){
       setTimeout(() => {
-          ShowPopup('selection sort',executionTime);
+          ShowPopup('Selection Sort',executionTime);
         }, animations.length * DELAY + ARR_LEN * DELAY);
       }
       return executionTime;
@@ -152,7 +152,7 @@ export default function SortVisualizer(props) {
     console.log(executionTime);
     if(true){
       setTimeout(() => {
-          ShowPopup('insertion sort',executionTime);
+          ShowPopup('Insertion Sort',executionTime);
         }, animations.length * DELAY + ARR_LEN * DELAY);
       }
       return executionTime;
@@ -241,7 +241,7 @@ export default function SortVisualizer(props) {
 
   function ShowPopup(algorithmType, executionTime){
     setTitle(`${algorithmType}`);
-    setBody(`excecution time is ${executionTime} ms`);
+    setBody(`Excecution time was ${executionTime} ms`);
     setShow(true);
   }
 

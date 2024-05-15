@@ -19,17 +19,16 @@ function Example({show, setShow, title, setTitle, body, setBody}) {
         title={setTitle}
         body={setBody}
       >
-        <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
+        <Modal.Header closeButton className='border-0'>
+          <Modal.Title className='title-text'>{title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className='body-text'>
           {body}
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Modal.Footer className='border-0'>
+          <Button variant="secondary" onClick={handleClose} className='close-btn btn-close-white'>
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
         </Modal.Footer>
       </Modal>
     </>
