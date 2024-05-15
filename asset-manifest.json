@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-sorting-vis/static/css/main.88276cfd.css",
+    "main.js": "/react-sorting-vis/static/js/main.a65435c7.js",
+    "static/js/453.fa99a613.chunk.js": "/react-sorting-vis/static/js/453.fa99a613.chunk.js",
+    "index.html": "/react-sorting-vis/index.html",
+    "main.88276cfd.css.map": "/react-sorting-vis/static/css/main.88276cfd.css.map",
+    "main.a65435c7.js.map": "/react-sorting-vis/static/js/main.a65435c7.js.map",
+    "453.fa99a613.chunk.js.map": "/react-sorting-vis/static/js/453.fa99a613.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88276cfd.css",
+    "static/js/main.a65435c7.js"
+  ]
+}
