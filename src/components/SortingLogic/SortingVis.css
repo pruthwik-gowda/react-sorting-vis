@@ -1,0 +1,111 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+}
+
+.array-container {
+  align-items: end;
+  display: flex;
+  margin: 30px;
+  margin-bottom: 0;
+}
+
+.array-bar {
+  background-color: #ACDDDE;
+  border-radius: 0.5em;
+  margin: 0.15%;
+  border: 1px solid black;
+}
+
+.app-footer {
+  display: flex;
+  overflow-x: auto;
+  margin: 0;
+  justify-content: center;
+  margin-top:28px;
+  margin-bottom: 28px;
+  
+}
+
+.app-footer ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  white-space: nowrap;
+  align-items: center;
+  margin:0;
+}
+
+.app-button {
+  border-radius: 0.4em;
+  border-width: 0.05em;
+  color: rgb(223, 6, 6);
+  padding: 0.5em;
+  margin: 0 0.5em;
+  background-color: transparent;
+}
+
+.app-button-compare {
+  border-radius: 0.4em;
+  border-width: 0.05em;
+  color: rgb(223, 6, 6);
+  padding: 0.5em;
+  margin: 0 0.5em;
+  background-color: transparent;
+}
+
+.app-button-compare:hover {
+  color: white;
+  background-color:  rgba(86, 144, 109, 0.563);
+}
+
+.app-button:focus {
+  outline: none;
+}
+
+.app-button:hover {
+  color: white;
+  background-color: rgba(137, 43, 226, 0.368);
+}
+
+.visualizer-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(216, 224, 253, 0.816);
+  
+}
+
+
+
+@media (max-width: 800px) {
+  .app-footer ul{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.text-btn {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.show-compare-chart{
+  width: 750px;
+  margin-bottom: 30px;
+  
+}
+
+.compare-chart-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(168, 213, 186, 0.378);
+}
+
+.go-back-btn{
+  margin-top: 10px;
+}
