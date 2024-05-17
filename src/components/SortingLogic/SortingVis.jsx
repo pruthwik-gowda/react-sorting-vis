@@ -26,7 +26,7 @@ var dataComp2 = compareAlgo();
 
 //----LOG----
 //->13-05-2024 - *used some logic to figure out how to get the modal to show up after excecution of the animation *used props to add the setTitle setBody nd much more to the modal
-//->15-05-2024 - added the barchart and compare feature(installed chart.js and react-chartjs-2 modules)
+//->15-05-2024 - *added the barchart and compare feature(installed chart.js and react-chartjs-2 modules) * designed the modal
 
 
 export default function SortVisualizer(props) {
@@ -89,7 +89,7 @@ export default function SortVisualizer(props) {
     let endTime = new Date().getTime();
     let executionTime = endTime - startTime;
     console.log(executionTime);
-    if(true){
+    if(ARR_LEN>50){
       setTimeout(() => {
           ShowPopup('Merge Sort',executionTime);
         }, animations.length * DELAY + ARR_LEN * DELAY);
@@ -104,7 +104,7 @@ export default function SortVisualizer(props) {
     let endTime = new Date().getTime();
     let executionTime = endTime - startTime;
     console.log(executionTime);
-    if(true){
+    if(ARR_LEN>50){
     setTimeout(() => {
         ShowPopup('Bubble Sort',executionTime);
       }, animations.length * DELAY + ARR_LEN * DELAY);
@@ -119,7 +119,7 @@ export default function SortVisualizer(props) {
     let endTime = new Date().getTime();
     let executionTime = endTime - startTime;
     console.log(executionTime);
-    if(true){
+    if(ARR_LEN>50){
       setTimeout(() => {
           ShowPopup('Quick Sort',executionTime);
         }, animations.length * DELAY + ARR_LEN * DELAY);
@@ -135,7 +135,7 @@ export default function SortVisualizer(props) {
     let endTime = new Date().getTime();
     let executionTime = endTime - startTime;
     console.log(executionTime);
-    if(true){
+    if(ARR_LEN>50){
       setTimeout(() => {
           ShowPopup('Selection Sort',executionTime);
         }, animations.length * DELAY + ARR_LEN * DELAY);
@@ -150,7 +150,7 @@ export default function SortVisualizer(props) {
     let endTime = new Date().getTime();
     let executionTime = endTime - startTime;
     console.log(executionTime);
-    if(true){
+    if(ARR_LEN>50){
       setTimeout(() => {
           ShowPopup('Insertion Sort',executionTime);
         }, animations.length * DELAY + ARR_LEN * DELAY);
@@ -284,7 +284,8 @@ export default function SortVisualizer(props) {
 };
 
   return (
-    <div className="visualizer-container">
+  <div className="visualizer-container">
+    <div className='sorting-container'>
       <div className="array-container" ref={containerRef}>
         {arr.map((barHeight, index) => (
           <div
@@ -333,17 +334,17 @@ export default function SortVisualizer(props) {
         <Example show={show} setShow={setShow} title={title} setTitle={setTitle} body={body} setBody={setBody}></Example>
         {/* <ComparePopup show={showCompare} setShow={setShowCompare} title={title} setTitle={setTitle} body={body} setBody={setBody} userData={userData} setUserData={setUserData}></ComparePopup> */}
       </footer>
-      <div className='compare-chart-container'>
-        <div className='show-compare-chart'><CompareCharts chartData={userData}></CompareCharts></div>
-        <button className="app-button-compare text-btn" onClick={goToCompare}>
+    </div>
+    <div className='compare-chart-container'>
+      <div className='show-compare-chart'><CompareCharts chartData={userData}></CompareCharts></div>
+      <button className="app-button-compare text-btn" onClick={goToCompare}>
               Compare Algorithms
         </button>
-        <button className="app-button-compare text-btn go-back-btn" onClick={goToTop}>
+      <button className="app-button-compare text-btn go-back-btn" onClick={goToTop}>
               Go Back
-        </button>
-      </div>
-      
+      </button>
     </div>
+  </div>
 
   );
 }

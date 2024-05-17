@@ -1,8 +1,10 @@
 import React from 'react';
 import { Bar } from "react-chartjs-2";
 import {Chart as ChartJS} from 'chart.js/auto'
+import "./CompareCharts.css"
 
 const options = {
+    maintainAspectRatio : false,
     plugins: {
       title: {
         display: true,
@@ -51,7 +53,9 @@ const options = {
 
 const CompareCharts = ({chartData}) => {
   return (
-    <Bar data={chartData} options={options}></Bar>
+    <div className='chart-container'>
+      <Bar data={chartData} options={options}></Bar>
+    </div>
   )
 }
 

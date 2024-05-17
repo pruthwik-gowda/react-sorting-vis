@@ -9,7 +9,7 @@ function Example({show, setShow, title, setTitle, body, setBody}) {
   //const handleShow = () => setShow(true);
 
   return (
-    <>
+    <><div className='modal-container'>
       <Modal
         className='modal'
         show={show}
@@ -31,6 +31,7 @@ function Example({show, setShow, title, setTitle, body, setBody}) {
           </Button>
         </Modal.Footer>
       </Modal>
+      </div>
     </>
   );
 }
