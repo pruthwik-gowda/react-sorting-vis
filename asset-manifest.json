@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-sorting-vis/static/css/main.83fd3c66.css",
-    "main.js": "/react-sorting-vis/static/js/main.1ea7b534.js",
+    "main.js": "/react-sorting-vis/static/js/main.4c6dd1e9.js",
     "static/js/453.fa99a613.chunk.js": "/react-sorting-vis/static/js/453.fa99a613.chunk.js",
     "index.html": "/react-sorting-vis/index.html",
     "main.83fd3c66.css.map": "/react-sorting-vis/static/css/main.83fd3c66.css.map",
-    "main.1ea7b534.js.map": "/react-sorting-vis/static/js/main.1ea7b534.js.map",
+    "main.4c6dd1e9.js.map": "/react-sorting-vis/static/js/main.4c6dd1e9.js.map",
     "453.fa99a613.chunk.js.map": "/react-sorting-vis/static/js/453.fa99a613.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.83fd3c66.css",
-    "static/js/main.1ea7b534.js"
+    "static/js/main.4c6dd1e9.js"
   ]
 }
