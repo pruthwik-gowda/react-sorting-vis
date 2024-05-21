@@ -299,7 +299,7 @@ export default function SortVisualizer(props) {
         <div>
         <span>Set array length:</span>
         <input type="range" 
-          min="0" 
+          min="10" 
           max={100} 
           onChange={(e) => getNewArray(e.target.value)} 
           value={arrSize}
