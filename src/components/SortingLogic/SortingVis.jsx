@@ -11,7 +11,7 @@ import CompareCharts from '../CompareChart/CompareCharts';
 
 const ARR_LEN = 100;
 const MIN_NUM = 5;
-const MAX_NUM = 75;
+const MAX_NUM = 70;
 var DELAY = 1;
 const ACCESSED_COLOUR = 'red';
 const SORTED_COLOUR = '#90EE90';
@@ -37,6 +37,8 @@ export default function SortVisualizer(props) {
   const [title, setTitle] = useState(null);
   const [body, setBody] = useState(null);
   const [showCompare,setShowCompare] = useState(false);
+  const [arrSize,setArrSize] = useState(100);
+  const [animationSpeed, setAnimationSpeed] = useState(1);
 
   const [userData, setUserData] = useState({
     labels: dataComp2.map((data) => data.name),
@@ -69,13 +71,14 @@ export default function SortVisualizer(props) {
   useEffect(initialiseArray, []);
 
 
+
   function initialiseArray() {
     if (isSorting) return;
     if (isSorted) resetArrayColour();
     setIsSorted(false);
     const arr = [];
-    for (let i = 0; i < ARR_LEN; i++) {
-      arr.push((MAX_NUM - MIN_NUM) * (i / ARR_LEN) + MIN_NUM);
+    for (let i = 0; i < arrSize; i++) {
+      arr.push((MAX_NUM - MIN_NUM) * (i / arrSize) + MIN_NUM);
     }
     shuffle(arr);
     setArr(arr);
@@ -89,10 +92,10 @@ export default function SortVisualizer(props) {
     let endTime = new Date().getTime();
     let executionTime = endTime - startTime;
     console.log(executionTime);
-    if(ARR_LEN>50){
+    if(arrSize>50){
       setTimeout(() => {
           ShowPopup('Merge Sort',executionTime);
-        }, animations.length * DELAY + ARR_LEN * DELAY);
+        }, animations.length * animationSpeed + arrSize * animationSpeed);
       }
     return executionTime;
   }
@@ -104,10 +107,10 @@ export default function SortVisualizer(props) {
     let endTime = new Date().getTime();
     let executionTime = endTime - startTime;
     console.log(executionTime);
-    if(ARR_LEN>50){
+    if(arrSize>50){
     setTimeout(() => {
         ShowPopup('Bubble Sort',executionTime);
-      }, animations.length * DELAY + ARR_LEN * DELAY);
+      }, animations.length * animationSpeed + arrSize * animationSpeed);
     }
     return executionTime;
   }
@@ -119,10 +122,10 @@ export default function SortVisualizer(props) {
     let endTime = new Date().getTime();
     let executionTime = endTime - startTime;
     console.log(executionTime);
-    if(ARR_LEN>50){
+    if(arrSize>50){
       setTimeout(() => {
           ShowPopup('Quick Sort',executionTime);
-        }, animations.length * DELAY + ARR_LEN * DELAY);
+        }, animations.length * animationSpeed + arrSize * animationSpeed);
       }
       return executionTime;
   }
@@ -135,10 +138,10 @@ export default function SortVisualizer(props) {
     let endTime = new Date().getTime();
     let executionTime = endTime - startTime;
     console.log(executionTime);
-    if(ARR_LEN>50){
+    if(arrSize>50){
       setTimeout(() => {
           ShowPopup('Selection Sort',executionTime);
-        }, animations.length * DELAY + ARR_LEN * DELAY);
+        }, animations.length * animationSpeed + arrSize * animationSpeed);
       }
       return executionTime;
   }
@@ -150,10 +153,10 @@ export default function SortVisualizer(props) {
     let endTime = new Date().getTime();
     let executionTime = endTime - startTime;
     console.log(executionTime);
-    if(ARR_LEN>50){
+    if(arrSize>50){
       setTimeout(() => {
           ShowPopup('Insertion Sort',executionTime);
-        }, animations.length * DELAY + ARR_LEN * DELAY);
+        }, animations.length * animationSpeed + arrSize * animationSpeed);
       }
       return executionTime;
   }
@@ -184,11 +187,11 @@ export default function SortVisualizer(props) {
         }, 0)
           
         }
-      }, index * DELAY);
+      }, index * animationSpeed);
     });
     setTimeout(() => {
       animateSortedArray();
-    }, animations.length * DELAY);
+    }, animations.length * animationSpeed);
   }
 
   function animateArrayAccess(index) {
@@ -196,10 +199,10 @@ export default function SortVisualizer(props) {
     const arrayBarStyle = arrayBars[index].style;
     setTimeout(() => {
       arrayBarStyle.backgroundColor = ACCESSED_COLOUR;
-    }, DELAY);
+    }, animationSpeed);
     setTimeout(() => {
       arrayBarStyle.backgroundColor = '';
-    }, DELAY * 2);
+    }, animationSpeed * 2);
   }
 
   function animateArrayAccessPair(index1, index2) {
@@ -209,11 +212,11 @@ export default function SortVisualizer(props) {
     setTimeout(() => {
       arrayBarStyle1.backgroundColor = ACCESSED_COLOUR;
       arrayBarStyle2.backgroundColor = ACCESSED_COLOUR;
-    }, DELAY);
+    }, animationSpeed);
     setTimeout(() => {
       arrayBarStyle1.backgroundColor = '';
       arrayBarStyle2.backgroundColor = '';
-    }, DELAY * 2);
+    }, animationSpeed * 2);
   }
   
   function animateSortedArray() {
@@ -222,13 +225,13 @@ export default function SortVisualizer(props) {
       const arrayBarStyle = arrayBars[i].style;
       setTimeout(
         () => (arrayBarStyle.backgroundColor = SORTED_COLOUR),
-        i * DELAY,
+        i * animationSpeed,
       );
     }
     setTimeout(() => {
       setIsSorted(true);
       setIsSorting(false);
-    }, arrayBars.length * DELAY);
+    }, arrayBars.length * animationSpeed);
   }
 
   function resetArrayColour() {
@@ -283,16 +286,44 @@ export default function SortVisualizer(props) {
     });
 };
 
+  function getNewArray(value){
+    setArrSize(value);
+    initialiseArray();
+    console.log(animationSpeed)
+  }
+
   return (
   <div className="visualizer-container">
     <div className='sorting-container'>
+      <div className='slider-container'>
+        <div>
+        <span>Set array length:</span>
+        <input type="range" 
+          min="0" 
+          max={100} 
+          onChange={(e) => getNewArray(e.target.value)} 
+          value={arrSize}
+          className='arrey-length-slider'
+        />
+        </div>
+        <div>
+        <span>Set animation speed:</span>
+        <input type="range" 
+          min="1" 
+          max={500} 
+          onChange={(e) => setAnimationSpeed(501 - e.target.value)} 
+          value={501 - animationSpeed}
+          enableRtl
+        />
+        </div>
+      </div>
       <div className="array-container" ref={containerRef}>
         {arr.map((barHeight, index) => (
           <div
             className="array-bar"
             style={{
               height: `${barHeight}vmin`,
-              width: `${100 / ARR_LEN}vw`,
+              width: `${100 / arrSize}vw`,
             }}
             key={index}
           ></div>
