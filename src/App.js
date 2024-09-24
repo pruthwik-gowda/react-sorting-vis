@@ -12,14 +12,15 @@ function App() {
 
   return (
     <Router>
-    <div>
-      <NavBar></NavBar>
-      <Routes>
-          <Route path="/" element={<SortingVis></SortingVis>} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-    </div>
+      <div>
+        <NavBar></NavBar>
+        {/* <SortingVis></SortingVis> */}
+        <Routes>
+            <Route path="/" element={<SortingVis></SortingVis>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+      </div>
     </Router>
   );
 }

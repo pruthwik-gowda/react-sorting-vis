@@ -19,7 +19,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#link" className='text-links' onClick={goToBottom}>Compare the Algorithms</Nav.Link>
+            <Nav.Link className='text-links' onClick={goToBottom}>Compare the Algorithms</Nav.Link>
             {/* <Nav.Link href="#link" className='text-links'>Pathfinder Algorithms</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
